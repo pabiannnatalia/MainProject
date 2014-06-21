@@ -1,0 +1,30 @@
+<h1>Listing posts</h1>
+
+
+
+ 
+    <% @posts.each do |post| %>
+      <div class="panel panel-default">
+        <div class="panel-heading"><b><%= post.title %></b></div>
+        <div class="panel-body">
+          
+          <%= video_tag post.video, :size => "320x240", :controls => true %>
+          <p>
+            <%= post.content %>
+          </p>
+          <div class="btn-group">
+           <%= link_to 'Show', post, :class => "btn btn-default" %>
+           <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
+           <%= link_to 'Destroy', post, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
+      
+
+    
+    <% end %>
+
+
+<br>
+
+

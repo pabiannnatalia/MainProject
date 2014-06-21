@@ -1,0 +1,2032 @@
+  [1m[36m (241.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (408.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20140615175904)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140615175904"]]
+  [1m[35m (392.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-15 19:59:27 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (0.8ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 289ms (Views: 287.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:32 +0200
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 19:59:36 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (12.2ms)
+  Rendered posts/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "post"=>{"title"=>"gfgdfg", "content"=>"fgdfgdf"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["content", "fgdfgdf"], ["created_at", "2014-06-15 17:59:40.254069"], ["title", "gfgdfg"], ["updated_at", "2014-06-15 17:59:40.254069"]]
+  [1m[36m (476.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 481ms (ActiveRecord: 476.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 19:59:40 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 19:59:42 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-06-15 19:59:43 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 19:59:44 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddVideoToPosts (20140615180247)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" ADD "video" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140615180247"]]
+  [1m[36m (241.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:03:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:03:57 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:06:36 +0200
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:06:37 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (18.5ms)
+  Rendered posts/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (4.7ms)
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:10 +0200
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-06-15 20:07:23 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "post"=>{"title"=>"ghghgfh", "content"=>"gfhgfh", "video"=>#<ActionDispatch::Http::UploadedFile:0x00000000ad6e48 @tempfile=#<Tempfile:/tmp/RackMultipart20140615-9230-ea61zz>, @original_filename="Screencast from 01-16-14 13:09:38.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"post[video]\"; filename=\"Screencast from 01-16-14 13:09:38.webm\"\r\nContent-Type: video/webm\r\n">}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "title", "updated_at", "video") VALUES (?, ?, ?, ?, ?)[0m  [["content", "gfhgfh"], ["created_at", "2014-06-15 18:07:23.871968"], ["title", "ghghgfh"], ["updated_at", "2014-06-15 18:07:23.871968"], ["video", "Screencast_from_01-16-14_13_09_38.webm"]]
+  [1m[35m (429.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 452ms (ActiveRecord: 429.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:07:24 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:07:25 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-06-15 20:08:20 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (328.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 330ms (ActiveRecord: 328.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:40 +0200
+
+
+Started DELETE "/posts/2" for 127.0.0.1 at 2014-06-15 20:08:43 +0200
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 2]]
+  [1m[36m (826.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 831ms (ActiveRecord: 826.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:08:44 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (2.1ms)
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-06-15 20:08:51 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "post"=>{"title"=>"gdfgdfg", "content"=>"gdfgdfgdf", "video"=>#<ActionDispatch::Http::UploadedFile:0x00000003d89070 @tempfile=#<Tempfile:/tmp/RackMultipart20140615-9230-p1378o>, @original_filename="Screencast from 01-03-14 14:30:20.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"post[video]\"; filename=\"Screencast from 01-03-14 14:30:20.webm\"\r\nContent-Type: video/webm\r\n">}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at", "video") VALUES (?, ?, ?, ?, ?)  [["content", "gdfgdfgdf"], ["created_at", "2014-06-15 18:08:51.827223"], ["title", "gdfgdfg"], ["updated_at", "2014-06-15 18:08:51.827223"], ["video", "Screencast_from_01-03-14_14_30_20.webm"]]
+  [1m[36m (506.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 512ms (ActiveRecord: 506.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:08:52 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:09:00 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/3" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 3]]
+  [1m[36m (388.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 391ms (ActiveRecord: 388.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:04 +0200
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:09:05 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "post"=>{"title"=>"dgfhgfhgfh", "content"=>"ghgfhgfh", "video"=>#<ActionDispatch::Http::UploadedFile:0x00000004339f88 @tempfile=#<Tempfile:/tmp/RackMultipart20140615-9230-7s0k06>, @original_filename="Screencast from 03-18-14 22:24:01.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"post[video]\"; filename=\"Screencast from 03-18-14 22:24:01.webm\"\r\nContent-Type: video/webm\r\n">}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at", "video") VALUES (?, ?, ?, ?, ?)  [["content", "ghgfhgfh"], ["created_at", "2014-06-15 18:09:13.596832"], ["title", "dgfhgfhgfh"], ["updated_at", "2014-06-15 18:09:13.596832"], ["video", "Screencast_from_03-18-14_22_24_01.webm"]]
+  [1m[36m (267.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 274ms (ActiveRecord: 267.4ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:09:13 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:09:22 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:10:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 1341ms (Views: 1332.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:48 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:10:50 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:11:45 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:13:32 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:14:26 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:14:27 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:14:28 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (10.1ms)
+  Rendered posts/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:14:29 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2014-06-15 20:14:30 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:14:31 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:14:58 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `video' for nil:NilClass):
+     7:       <div class="panel panel-default">
+     8:         <div class="panel-heading"><%= post.title %></div>
+     9:         <div class="panel-body">
+    10:           <%= video_tag @post.video, :size => "320x240", :controls => true %>
+    11:           <%= post.content %>
+    12:           <%= link_to 'Show', post %>
+    13:           <%= link_to 'Edit', edit_post_path(post) %>
+  app/views/posts/index.html.erb:10:in `block in _app_views_posts_index_html_erb__723526003511574815_70234942217120'
+  app/views/posts/index.html.erb:6:in `_app_views_posts_index_html_erb__723526003511574815_70234942217120'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.8ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:05 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:15:07 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:15:52 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:36 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:52 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:53 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:53 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:16:53 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:07 +0200
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:17:09 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (1.6ms)
+  Rendered posts/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:10 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2014-06-15 20:17:11 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:12 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:15 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:17:15 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:16 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:17:19 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (1.9ms)
+  Rendered posts/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:21 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:17:22 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:17:26 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:17:46 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (2.9ms)
+  Rendered posts/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (2.1ms)
+  Rendered posts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:17:55 +0200
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:18:01 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (0.6ms)
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/home/jaroslaw/Projects/wojcik2/app/views/posts/_form.html.erb:26: syntax error, unexpected =>, expecting :: or '[' or '.'
+...er.append=( f.submit, :class => "form-control"  );@output_bu...
+...                               ^):
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__3497681344902747969_70234940542760'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:18:06 +0200
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:17 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000046c3f78>:0x00000004be0538>):
+    4: 
+    5:      <div class="btn-group">
+    6: 
+    7:            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
+    8:            <%= link_to 'Destroy', post, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+    9:           </div>
+  app/views/posts/edit.html.erb:7:in `_app_views_posts_edit_html_erb__3497681344902747969_39740580'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.4ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:18 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000046c3f78>:0x00000003ce1398>):
+    4: 
+    5:      <div class="btn-group">
+    6: 
+    7:            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
+    8:            <%= link_to 'Destroy', post, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+    9:           </div>
+  app/views/posts/edit.html.erb:7:in `_app_views_posts_edit_html_erb__3497681344902747969_39740580'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.4ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:30 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/edit.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000046c3f78>:0x007fc1b1988a58>):
+    4: 
+    5:      <div class="btn-group">
+    6: 
+    7:            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
+    8:            <%= link_to 'Destroy', post, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+    9:           </div>
+  app/views/posts/edit.html.erb:7:in `_app_views_posts_edit_html_erb__3497681344902747969_39740580'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.8ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:30 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/edit.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000046c3f78>:0x007fc1b1884a80>):
+    4: 
+    5:      <div class="btn-group">
+    6: 
+    7:            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
+    8:            <%= link_to 'Destroy', post, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+    9:           </div>
+  app/views/posts/edit.html.erb:7:in `_app_views_posts_edit_html_erb__3497681344902747969_39740580'
+
+
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/jaroslaw/.gem/ruby/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6.4ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (2.5ms)
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:19:40 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:19:51 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:19:53 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (2.5ms)
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:19:55 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:19:58 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:20:01 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:20:03 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:16 +0200
+
+
+Started POST "/posts" for 127.0.0.1 at 2014-06-15 20:20:34 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P1McdEJkecuuelFLq7aksJm7JA+5aB9p/2tQfJg1tDE=", "post"=>{"title"=>"gfgfdgdfg", "content"=>"fgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdf", "video"=>#<ActionDispatch::Http::UploadedFile:0x00000001d67878 @tempfile=#<Tempfile:/tmp/RackMultipart20140615-9387-x528h6>, @original_filename="Screencast from 01-16-14 13:12:53.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"post[video]\"; filename=\"Screencast from 01-16-14 13:12:53.webm\"\r\nContent-Type: video/webm\r\n">}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("content", "created_at", "title", "updated_at", "video") VALUES (?, ?, ?, ?, ?)  [["content", "fgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdffgdfgdfgdfgdfgdmflsngd/,f.gkjd;flsgkjdfsgkdfgdfgdfgdfgdfgdf"], ["created_at", "2014-06-15 18:20:34.891255"], ["title", "gfgfdgdfg"], ["updated_at", "2014-06-15 18:20:34.891255"], ["video", "Screencast_from_01-16-14_13_12_53.webm"]]
+  [1m[36m (317.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 346ms (ActiveRecord: 318.1ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:35 +0200
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-15 20:20:49 +0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:20:53 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2014-06-15 20:21:03 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-06-15 20:21:05 +0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+  [1m[36mSQL (236.6ms)[0m  [1mDELETE FROM "posts"[0m
